@@ -20,5 +20,8 @@ Return:
 'value': returns the trimmed mean value
 'error': Returns an error if input is not a slice or contains unsupported types
 
-
+# Notes
+This function has the same output / use case as R's 'mean' with 'trim' enabled
+![alt text](image-1.png)
+![alt text](image.png)
 

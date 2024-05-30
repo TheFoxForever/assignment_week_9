@@ -10,31 +10,31 @@ func main() {
 	// proportion to be trimmed from both ends
 	proportion := 0.05
 
-    // lists of data that hold integer and float values, at 100 each
-	intData := make([]float64, 100)
-    for i := 0; i < 100; i++ {
-        intData[i] = float64(i + 1)
-    }
-
-    floatData := make([]float64, 100)
+	// lists of data that hold integer and float values, at 100 each
+	intData := make([]int, 100)
 	for i := 0; i < 100; i++ {
-		floatData = append(floatData, float64(i+1)+0.5)
+		intData[i] = int(i + 1)
+	}
+
+	floatData := make([]float64, 100)
+	for i := 0; i < 100; i++ {
+		floatData[i] = float64(i+1) + 0.5
 	}
 
 	// calculations
-    intMean, err := trimmedmean.TrimmedMean(intData, proportion)
+	intMean, err := trimmedmean.TrimmedMean(intData, proportion)
 	//if error, then we show the error
-    if err != nil {
-        fmt.Println("Error calculating trimmed mean:", err)
-    } else {
-        fmt.Println("Trimmed Mean:", intMean)
-    }
+	if err != nil {
+		fmt.Println("Error calculating trimmed mean:", err)
+	} else {
+		fmt.Println("Trimmed Mean int:", intMean)
+	}
 
 	//and for float values
-    floatMean, err := trimmedmean.TrimmedMean(floatData, proportion)
-    if err != nil {
-        fmt.Println("Error calculating trimmed mean:", err)
-    } else {
-        fmt.Println("Trimmed Mean:", floatMean)
-    }
+	floatMean, err := trimmedmean.TrimmedMean(floatData, proportion)
+	if err != nil {
+		fmt.Println("Error calculating trimmed mean:", err)
+	} else {
+		fmt.Println("Trimmed Mean float:", floatMean)
+	}
 }
